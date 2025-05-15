@@ -1,0 +1,28 @@
+{
+  "name": "warranty-pdf-downloader",
+  "version": "1.0.0",
+  "description": "Downloads PDFs from warranty form submission emails and uploads to Google Drive",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "cleanup": "node cleanup.js"
+  },
+  "keywords": [
+    "google-drive",
+    "gmail",
+    "automation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "googleapis": "^131.0.0",
+    "node-cron": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
