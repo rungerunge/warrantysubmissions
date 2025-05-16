@@ -5,23 +5,20 @@ services:
     runtime: node
     buildCommand: npm install
     startCommand: npm start
+    # Using service account authentication with domain-wide delegation instead of OAuth
     envVars:
       - key: NODE_ENV
         value: production
-      - key: GOOGLE_CLIENT_ID
-        sync: false
-      - key: GOOGLE_CLIENT_SECRET
-        sync: false
-      - key: GOOGLE_REDIRECT_URI
-        sync: false
-      - key: GOOGLE_REFRESH_TOKEN
-        sync: false
+      - key: GMAIL_USER
+        value: ajensenfishing@gmail.com
       - key: GOOGLE_DRIVE_FOLDER_ID
         sync: false
       - key: GMAIL_SEARCH_QUERY
         sync: false
+      - key: GOOGLE_SHEET_ID
+        value: 1yvtOide4NN8cOd0-icuR4mMpEAtcd6yaWiB47uDcFu0
       - key: RETENTION_PERIOD
-        value: "5"
+        value: '5'
     cron:
-      - schedule: "0 0 * * *"
-        command: node cleanup.js 
+      - schedule: '0 0 * * *'
+        command: node cleanup.js
